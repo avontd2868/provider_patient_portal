@@ -11,4 +11,5 @@
  *= require_self
  *= require 'reset.css'
  *= require 'bootstrap.css'
+ *= require 'doctor_search.css'
  */

@@ -13,12 +13,12 @@ FinalProject::Application.routes.draw do
 
   #shared paths
   get '/logout' => 'patient_session#destroy'
+  get '/doctor_data' => 'dashboard#doctor_data'
 
-  # resources :patient
-  # match '/patient_login' => 'session_patient#new', :via => :get
-  # match '/session_patient' => 'session_patient#create', :via => :post
-  # get '/dashboard' => 'dashboard#index'
-  # get '/dashboard_patient' => 'dashboard#patient_index'
+
+
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
