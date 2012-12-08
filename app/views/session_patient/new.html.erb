@@ -1,0 +1,14 @@
+<div>
+  <%= form_tag '/session_patient' do %>
+    <%= label_tag 'Username' %>
+    <%= text_field_tag 'username' %>
+    <%= label_tag 'Password' %>
+    <%= password_field_tag 'password' %>
+    <%= submit_tag 'Login!' %>
+  <% end %>
+</div>
+
+<div>
+  <!-- This will be a place for new users to register -->
+  OR Register<%#= link_to "Register", new_user_path %>
+</div>
