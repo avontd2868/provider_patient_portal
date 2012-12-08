@@ -5,6 +5,8 @@
   def authenticate_user
     if session[:patient_id]
       @auth = Patient.find(session[:patient_id])
+    elsif session[:doctor_id]
+      @auth = Doctor.find(session[:doctor_id])
     else
       @auth = nil
     end

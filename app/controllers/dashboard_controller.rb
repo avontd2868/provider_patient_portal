@@ -1,6 +1,11 @@
 class DashboardController < ApplicationController
 
-  def patient_index
+  def index_patient
 
   end
+
+  def index_provider
+
+  end
+  
 end

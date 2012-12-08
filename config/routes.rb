@@ -1,10 +1,24 @@
 FinalProject::Application.routes.draw do
-  root :to => 'home#index.html'
-  
-  resources :patient
-  match '/patient_login' => 'session_patient#new', :via => :get
-  match '/session_patient' => 'session_patient#create', :via => :post
-  get '/dashboard_patient' => 'dashboard#patient_index'
+  root :to => 'home#index'
+
+  #patient paths
+  get '/patient_session' => 'patient_session#new'
+  post '/patient_session' => 'patient_session#create'
+  get 'patient_dashboard' => 'dashboard#index_patient'
+
+  #provider paths
+  get '/provider_session' => 'provider_session#new'
+  post '/provider_session' => 'provider_session#create'
+  get '/provider_dashboard' => 'dashboard#index_provider'
+
+  #shared paths
+  get '/logout' => 'patient_session#destroy'
+
+  # resources :patient
+  # match '/patient_login' => 'session_patient#new', :via => :get
+  # match '/session_patient' => 'session_patient#create', :via => :post
+  # get '/dashboard' => 'dashboard#index'
+  # get '/dashboard_patient' => 'dashboard#patient_index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
