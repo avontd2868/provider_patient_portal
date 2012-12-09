@@ -13,5 +13,11 @@ class PatientController < ApplicationController
   def edit
     @patient = Patient.find(params[:patient_id])  
   end
+
+  def join
+    # @doc = Doctor.find(params[:id])
+    r = Request.create(:sender_id => @auth[:id], :receiver_id => params[:id], :accepted => nil)
+    # render :partial => 'success'
+  end
   
 end

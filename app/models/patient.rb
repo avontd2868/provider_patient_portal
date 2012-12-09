@@ -12,6 +12,7 @@
 #  password_digest :string(255)
 #  age             :integer
 #  photo_id        :integer
+#  patient         :boolean
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

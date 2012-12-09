@@ -12,6 +12,7 @@ gem 'pg'
 gem 'rmagick'
 gem 'rails-footnotes'
 gem 'bcrypt-ruby'
+gem 'pry-rails'
 
 
 # Gems used only for assets and not required

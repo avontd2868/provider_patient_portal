@@ -1,0 +1,19 @@
+
+<% if requests.any? %>
+  <div>
+    <div><h1> You have new patient requests</h1></div>
+    <% requests.each do |req| %>
+      <div class = "doctor_search">
+        Prospective Patient: <%= Patient.find_by_id(req.sender_id).first_name %> <%=Patient.find_by_id(req.sender_id).last_name %><br>
+        Username: <%= Patient.find_by_id(req.sender_id).username %> <br>
+        Phone: <%= Patient.find_by_id(req.sender_id).phone %> <br>
+        <%= link_to "Accept Patient", req, :method => :post, :remote => :true %>, 
+        <%= link_to "Reject Request", req, :method => :delete, :confirm => "Are you sure you want to delete request?", :remote => :true %>, 
+        <%= link_to 'Send a Message', root_path %>
+      </div><!-- .doctor_search -->
+    <% end %>
+  </div>
+
+  <% else %>
+    <div><h1> You have no new patient requests</h1></div>
+<% end %>

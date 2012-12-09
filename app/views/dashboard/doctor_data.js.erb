@@ -1,4 +1,5 @@
 $('#doctor_list').empty();
+
 <% @docs.each do |doc| %>
   doc = $('<div>');
   doc.addClass('doctor_search');
@@ -8,5 +9,6 @@ $('#doctor_list').empty();
   doc.append('<div> <%= doc.email %> </div>');
   doc.append('<div> <%= link_to "Send a Message", root_path %> </div>');
   doc.append('<div> <%= link_to "Set an Appointment", root_path %> </div>');
+  doc.append('<div> <%= link_to  "Request provider care", join_path(doc.id), remote: true  %></div>'); 
 <% end %>
 
