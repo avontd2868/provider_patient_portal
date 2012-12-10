@@ -8,10 +8,18 @@
 </head>
 <body>
 
-<nav>
-  <%= link_to "HOME", logout_path %>
-</nav>
-<%= yield %>
+<div class="container">
+  <div class = "navbar">
+    <div class = "navbar-inner">
+      <ul class = "nav">
+        <li><%= link_to "HOME", logout_path %></li>
+        <li class="divider-vertical"></li>
+
+      </ul>
+    </div>
+  </div>
+  <%= yield %>
+</div> 
 
 </body>
 </html>

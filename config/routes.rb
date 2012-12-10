@@ -1,27 +1,29 @@
 FinalProject::Application.routes.draw do
   root :to => 'home#index'
 
+  resources :providers
+
   #patient/provider requests
-  get '/request/:id' => 'provider#patient_requests'
-  post '/request/:id' => 'provider#join_patient_request'
-  delete '/request/:id' => 'provider#destroy_patient_request'
+  #post '/request/:id' => 'providers#patient_requests', :as => :request
+  post '/request/:id' => 'providers#join_patient_request', :as => :request
+  delete '/request/:id' => 'providers#destroy_patient_request', :as => :request
 
   #patient paths
   get '/patient_session' => 'patient_session#new'
   post '/patient_session' => 'patient_session#create'
-  get 'patient_dashboard' => 'dashboard#index_patient'
+  get 'patient_dashboard' => 'dashboards#index_patient'
   match '/patient/:id/join' => 'patient#join', :as => :join
 
   #provider paths
   get '/provider_session' => 'provider_session#new'
   post '/provider_session' => 'provider_session#create'
-  get '/provider_dashboard' => 'dashboard#index_provider'
-  get '/patient_requests' => 'provider#patient_requests'  #AJAX - Create a relationship between doctor and patient
+  get '/provider_dashboard' => 'dashboards#index_provider'
+  get '/patient_requests' => 'providers#patient_requests'  #AJAX - Create a relationship between doctor and patient
 
 
   #shared paths
   get '/logout' => 'patient_session#destroy'
-  get '/doctor_data' => 'dashboard#doctor_data' #AJAX
+  get '/doctor_data' => 'dashboards#doctor_data' #AJAX
 
 
 
