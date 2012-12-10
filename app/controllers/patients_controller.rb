@@ -15,9 +15,18 @@ class PatientsController < ApplicationController
   end
 
   def join
-    # @doc = Doctor.find(params[:id])
     r = Request.create(:sender_id => @auth[:id], :receiver_id => params[:id], :accepted => nil)
     # render :partial => 'success'
+  end
+
+  def show_doctors
+    @matches = Matches.find_all_by_patient_id(@auth[:id])
+  end
+
+  def delete_doctor
+    match = Matches.find(params[:id])
+    match.delete
+    @matches = Matches.find_all_by_patient_id(@auth[:id])
   end
   
 end

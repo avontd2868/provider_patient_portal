@@ -1,17 +1,13 @@
-<h1>Index Page</h1>
+<div class = "row">
 
-<div>
-  <%= link_to 'Patient Portal', patient_session_path %>
-</div>
+  <div class = "span6">
+    <a href="/patient_session" class="btn btn-primary btn-large" style="width: 100%; padding: 20px 0; font-size: 1.5em;">For Patients »
+    <br><span class="btn-subhead">Are you frustrated trying to ask you doctor simple questions?</span></a>
+  </div>
 
-or
+  <div class = "span6">
+    <a href="/provider_session" class="btn btn-primary btn-large" style="width: 100%; padding: 20px 0; font-size: 1.5em;">For Doctors »
+      <br><span class="btn-subhead">Wish there was an easier way to respond quickly to non-urgent requests?</span></a>
+  </div>
 
-<div>
-  <%= link_to 'Provider Portal', provider_session_path %>
-</div>
-
-or
-
-<div>
-  <h1>sign up!</h1>
 </div>

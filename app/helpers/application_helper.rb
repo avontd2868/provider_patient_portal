@@ -3,7 +3,7 @@ module ApplicationHelper
         if @auth
             link_to "Logout", logout_path
         else
-            link_to "Login", login_path
+             link_to "Login", root_path
         end
     end
 

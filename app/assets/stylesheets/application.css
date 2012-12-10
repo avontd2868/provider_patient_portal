@@ -12,4 +12,5 @@
  *= require 'reset.css'
  *= require 'bootstrap.css'
  *= require 'doctor_search.css'
+*= require 'sitewide.css'
  */

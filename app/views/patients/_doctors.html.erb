@@ -1,0 +1,9 @@
+
+<% @matches.each do |match| %>
+  <div class = "doctor_search">
+    <div><%= Doctor.find_by_id(match.doctor_id).first_name %> <%= Doctor.find_by_id(match.doctor_id).last_name %></div>
+    <div><%= Doctor.find_by_id(match.doctor_id).phone %></div>
+    <div><%= Doctor.find_by_id(match.doctor_id).email %></div>
+    <div><%= link_to "Remove Doctor", delete_doctor_path(match.id), method: :delete, data: { confirm: 'Are you sure?' }, :remote => :true %></div>
+  </div><!-- doctor_search -->
+<% end %>
