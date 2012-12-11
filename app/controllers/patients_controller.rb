@@ -28,5 +28,25 @@ class PatientsController < ApplicationController
     match.delete
     @matches = Matches.find_all_by_patient_id(@auth[:id])
   end
-  
+
+  def add_photo
+    @photo = Photo.new
+    # @auth.photos << @photo
+    # redirect_to patient_dashboard_path
+  end
+
+  def create_photo
+    # raise params.inspect
+    id = @auth.id
+    binding.pry
+    @photo = Photo.new(params[:photo])
+    @photo.user_id = id
+    @photo.save
+    # if @photo.save
+      redirect_to patient_dashboard_path
+    # else
+    #   render :add_photo
+    # end
+  end
+
 end

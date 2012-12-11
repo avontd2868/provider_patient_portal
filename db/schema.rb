@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208214559) do
+ActiveRecord::Schema.define(:version => 20121210213127) do
 
   create_table "appointments", :force => true do |t|
     t.integer "doctor_id"
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(:version => 20121208214559) do
     t.integer "patient_id"
   end
 
+  create_table "messages", :force => true do |t|
+    t.integer  "sender"
+    t.integer  "recipient"
+    t.string   "subject"
+    t.text     "content"
+    t.integer  "photo_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "patients", :force => true do |t|
     t.string   "username"
     t.string   "last_name"
@@ -82,9 +92,14 @@ ActiveRecord::Schema.define(:version => 20121208214559) do
   end
 
   create_table "photos", :force => true do |t|
-    t.integer  "parent_id"
-    t.string   "caption"
     t.string   "photo"
+    t.string   "name"
+    t.integer  "visit_id"
+    t.integer  "doctor_id"
+    t.integer  "user_id"
+    t.integer  "message_id"
+    t.boolean  "primary"
+    t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -93,6 +108,16 @@ ActiveRecord::Schema.define(:version => 20121208214559) do
     t.integer "sender_id"
     t.integer "receiver_id"
     t.boolean "accepted"
+  end
+
+  create_table "visits", :force => true do |t|
+    t.integer  "doctor_id"
+    t.integer  "patient_id"
+    t.datetime "dateandtime"
+    t.text     "notes"
+    t.integer  "photo_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

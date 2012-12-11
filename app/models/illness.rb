@@ -13,5 +13,5 @@
 
 class Illness < ActiveRecord::Base
   has_and_belongs_to_many :patients
-  has_many :photos, :as => :imageable
+  has_many :photos
 end

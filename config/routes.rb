@@ -1,6 +1,7 @@
 FinalProject::Application.routes.draw do
   root :to => 'home#index'
 
+  #photos
   post '/request/:id' => 'providers#join_patient_request', :as => :request
   delete '/request/:id' => 'providers#destroy_patient_request', :as => :request
 
@@ -11,6 +12,9 @@ FinalProject::Application.routes.draw do
   match '/patient/join/:id' => 'patients#join', :as => :join
   get '/patient_doctorlist' => 'patients#show_doctors'
   delete '/patient_doctorlist/:id' => 'patients#delete_doctor', :as => :delete_doctor
+  #add a photo
+  get '/add_patient_photo' => 'patients#add_photo'
+  post '/add_patient_photo' => 'patients#create_photo'
 
   #provider paths
   get '/provider_session' => 'provider_session#new'

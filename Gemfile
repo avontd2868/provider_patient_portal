@@ -13,6 +13,7 @@ gem 'rmagick'
 gem 'rails-footnotes'
 gem 'bcrypt-ruby'
 gem 'pry-rails'
+gem 'thin'
 
 
 # Gems used only for assets and not required

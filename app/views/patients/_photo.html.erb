@@ -1,0 +1,13 @@
+<%=  form_for '/add_patient_photo', :html => { :multipart => true } do |f| %>
+  
+  <div class="field">
+    <%= f.file_field :image %>
+  </div>
+  <div class="field">
+   <%= f.label :name %>
+   <%= f.text_field :name %>
+  </div>
+   <%= f.text_field :remote_image_url, :placeholder => "Or enter a url" %>
+
+   <div class="submit"><%= f.submit %></div>
+<% end %>

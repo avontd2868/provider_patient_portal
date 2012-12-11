@@ -6,7 +6,9 @@
 <div>Age: <%= @auth.age %> </div>
 <!-- Put the photo in here -->
 
+<div><%#= image_tag %></div>
 <div><%= link_to "Edit Your Personal Info", root_path %></div>
+<div><%= link_to "Add a photo", add_patient_photo_path %></div>
 <div><%= link_to "Your Medical Providers", patient_doctorlist_path, remote: true %></div>
 <div><%= link_to "List of Medications", root_path %></div>
 <div><%= link_to "Current Illnesses", root_path %></div>

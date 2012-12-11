@@ -18,10 +18,13 @@
 #
 
 class Patient < ActiveRecord::Base
+  #attr_accessible :photo_id, :remote_photo_url
+  # mount_uploader :photos, PhotosUploader
+
   has_secure_password
   
   has_and_belongs_to_many :doctors
   has_and_belongs_to_many :illnesses
   has_many :appointments
-  has_many :photos, :as => :imageable
+  has_many :photos
 end
